@@ -6,8 +6,13 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:29:22 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/08 12:29:23 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/08 15:01:53 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CHECKER_H
+# define CHECKER_H
 
+# include "../libft/libft.h"
+
+#endif

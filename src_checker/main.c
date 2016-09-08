@@ -6,8 +6,15 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:12 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/08 12:28:14 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/08 15:07:52 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/checker.h"
 
+int		main(int argc, char **argv)
+{
+	(void)argc;
+	(void)argv;
+	ft_printf("test checker ok\n");
+}

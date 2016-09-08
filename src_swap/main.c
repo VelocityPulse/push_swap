@@ -6,8 +6,16 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:04 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/08 12:28:05 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/08 15:14:11 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/swap.h"
 
+int		main(int argc, char **argv)
+{
+	(void)argc;
+	(void)argv;
+	ft_printf("test swap ok\n");
+	return (0);
+}

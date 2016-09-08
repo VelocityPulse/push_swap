@@ -6,8 +6,13 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:29:29 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/08 12:29:30 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/08 15:09:06 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SWAP_H
+# define SWAP_H
 
+# include "../libft/libft.h"
+
+#endif
