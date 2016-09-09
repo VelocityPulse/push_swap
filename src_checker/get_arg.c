@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_arg.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/08 12:28:12 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/09 12:41:54 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/09/09 12:05:25 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/09/09 12:39:37 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-
-int			main(int argc, char **argv)
+int		get_arg(t_pswap *ps, int ac, char **av)
 {
-	t_pswap		ps;
+	int		i;
 
-	int i = -1;
-	if (!get_arg(&ps, argc, argv))
-		ft_printf("Error\n");
-//	ft_printf("ac : %d\n", argc);
-	while (++i < ps.alen)
-		ft_printf("%d\n", ps.a[i]);
+	i = 0;
+	while (++i < ac)
+	{
+		ft_printf("|%d|\n", ft_strisdigit(av[i]));
+		if (!ft_strisdigit(av[i]))
+			return (_ERROR_);
+	}
+	ps->alen = ac - 1;
+	ps->a = (int *)ft_memalloc(sizeof(int) * (ac - 1));
+	ps->blen = ac - 1;
+	ps->b = (int *)ft_memalloc(sizeof(int) * (ac - 1));
+	i = 0;
+	while (++i < ac)
+	{
+		ps->a[i] = ft_atoi(av[i]);
+	}
+	return (_SUCCESS_);
 }

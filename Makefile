@@ -6,13 +6,14 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/05 16:30:43 by cchameyr          #+#    #+#              #
-#    Updated: 2016/09/08 15:35:28 by cchameyr         ###   ########.fr        #
+#    Updated: 2016/09/09 12:32:57 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FILES_SWAP =			main.c
 
-FILES_CHECKER =			main.c
+FILES_CHECKER =			main.c \
+						get_arg.c
 
 SRC_SWAP =				$(addprefix src_swap/, $(FILES_SWAP))
 
@@ -47,10 +48,10 @@ $(OBJS_CHECKER):
 
 obj_checker_mv:
 	@mkdir obj_checker
-	@mv $(FILES_SWAP:.c=.o) ./obj_checker/
+	@mv $(FILES_CHECKER:.c=.o) ./obj_checker/
 
 obj_checker_rm:
-	@$(RM) ./obj_checker
+	$(RM) ./obj_checker
 
 
 $(NAME_SWAP): $(LIBFT) $(OBJS_SWAP)
