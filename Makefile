@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/05 16:30:43 by cchameyr          #+#    #+#              #
-#    Updated: 2016/09/12 13:17:47 by cchameyr         ###   ########.fr        #
+#    Updated: 2016/09/12 14:52:27 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ FILES_SWAP =			main.c
 
 FILES_CHECKER =			main.c \
 						get_next_line.c \
-						get_arg.c
+						make_rule.c
 
 SRC_SWAP =				$(addprefix src_swap/, $(FILES_SWAP))
 

@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:29:22 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/09 12:35:19 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/12 15:30:02 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,26 @@
 # define CHECKER_H
 
 # include "../libft/libft.h"
+# include "get_next_line.h"
 
 #include "debug.h"
 
-typedef struct	s_pswap
+typedef struct	s_checker
 {
-	int		*a;
-	int		alen;
-	int		*b;
-	int		blen;
-}				t_pswap;
+	int			*a;
+	int			*b;
+	int			tmpa;
+	int			tmpb;
+	int			alen;
+	int			blen;
+	t_lstline	*begin;
+}				t_checker;
 
-int		get_arg(t_pswap *ps, int ac, char **av);
+int		make_rules(t_checker *c);
+
+void	rule_sa(t_checker *c);
+void	rule_sb(t_checker *c);
+void	rule_ss(t_checker *c);
+
 
 #endif
