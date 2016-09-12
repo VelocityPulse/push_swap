@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/05 16:30:43 by cchameyr          #+#    #+#              #
-#    Updated: 2016/09/09 12:32:57 by cchameyr         ###   ########.fr        #
+#    Updated: 2016/09/12 13:12:39 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,8 @@ obj_checker_mv:
 	@mv $(FILES_CHECKER:.c=.o) ./obj_checker/
 
 obj_checker_rm:
-	$(RM) ./obj_checker
+	@$(RM) ./obj_checker
+	@$(RM) $(FILES_CHECKER:.c=.o)
 
 
 $(NAME_SWAP): $(LIBFT) $(OBJS_SWAP)
@@ -67,6 +68,7 @@ obj_swap_mv:
 
 obj_swap_rm:
 	@$(RM) ./obj_swap
+	@$(RM) $(FILES_SWAP:.c=.o)
 
 
 $(LIBFT):
