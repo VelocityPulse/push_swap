@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:12 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/12 15:05:11 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/13 12:11:42 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int		get_arg(t_checker *c, int ac, char **av)
 	c->b = (int *)ft_memalloc(sizeof(int) * (ac - 1));
 	i = 0;
 	while (++i < ac)
-		c->a[i] = ft_atoi(av[i]);
+		c->a[i - 1] = ft_atoi(av[i]);
 	return (_SUCCESS_);
 }
 
@@ -73,14 +73,22 @@ int				main(int argc, char **argv)
 	i = -1;
 	if (!get_arg(&c, argc, argv))
 		ft_printf("Error\n");
-	if (!check_dublicate(&c))
+	else if (!check_dublicate(&c))
 		ft_printf("Error\n");
-	if (!get_rules(&c))
+	else if (!get_rules(&c))
 		ft_printf("Error\n");
-	if (!make_rules(&c))
+	else if (!make_rules(&c))
 		ft_printf("Error\n");
-	while (++i <= c.alen)
-		ft_printf("%d\n", c.a[i]);
+	else
+	{
+		ft_printf("pile A\n");
+		while (++i < c.tmpa)
+			ft_printf("->%d\n", c.a[i]);
+		i = -1;
+		ft_printf("pile B\n");
+		while (++i < c.tmpb)
+			ft_printf("->%d\n");
+	}
 	c.begin = ft_lstline_del(c.begin);
 	return (0);
 }
