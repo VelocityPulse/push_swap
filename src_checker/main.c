@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:12 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/13 12:11:42 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/13 16:10:33 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ static int		get_arg(t_checker *c, int ac, char **av)
 		if (!ft_strisdigit(av[i]))
 			return (_ERROR_);
 	}
-	c->alen = ac - 1;
+	c->len = ac - 1;
 	c->a = (int *)ft_memalloc(sizeof(int) * (ac - 1));
-	c->blen = ac - 1;
 	c->b = (int *)ft_memalloc(sizeof(int) * (ac - 1));
 	i = 0;
 	while (++i < ac)
@@ -50,10 +49,10 @@ static int		check_dublicate(t_checker *c)
 	int		j;
 
 	i = -1;
-	while (++i <= c->alen)
+	while (++i <= c->len)
 	{
 		j = -1;
-		while (++j <= c->alen)
+		while (++j <= c->len)
 		{
 			if (j != i)
 			{
@@ -61,6 +60,21 @@ static int		check_dublicate(t_checker *c)
 					return (_ERROR_);
 			}
 		}
+	}
+	return (_SUCCESS_);
+}
+
+static int		check_sort(t_checker *c)
+{
+	int		i;
+
+	if (c->tmpb != 0)
+		return (_ERROR_);
+	i = c->len - 1;
+	while (--i >= 0)
+	{
+		if (c->a[i] > c->a[i + 1])
+			return (_ERROR_);
 	}
 	return (_SUCCESS_);
 }
@@ -79,16 +93,36 @@ int				main(int argc, char **argv)
 		ft_printf("Error\n");
 	else if (!make_rules(&c))
 		ft_printf("Error\n");
-	else
-	{
+	else if (!check_sort(&c))
+		ft_printf("KO\n");
+//	else
+//	{
+		ft_printf("OK\n");
 		ft_printf("pile A\n");
 		while (++i < c.tmpa)
 			ft_printf("->%d\n", c.a[i]);
 		i = -1;
 		ft_printf("pile B\n");
 		while (++i < c.tmpb)
-			ft_printf("->%d\n");
-	}
+			ft_printf("->%d\n", c.b[i]);
+//	}
+
+/*	else
+		ft_printf("OK\n");
 	c.begin = ft_lstline_del(c.begin);
-	return (0);
+*/	return (0);
 }
+
+/*
+** test :
+**	else
+**	{
+**		ft_printf("pile A\n");
+**		while (++i < c.tmpa)
+**			ft_printf("->%d\n", c.a[i]);
+**		i = -1;
+**		ft_printf("pile B\n");
+**		while (++i < c.tmpb)
+**			ft_printf("->%d\n", c.b[i]);
+**	}
+*/
