@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:29:22 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/13 16:00:24 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/14 10:56:08 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include "../libft/libft.h"
 # include "get_next_line.h"
-
-#include "debug.h"
 
 typedef struct	s_checker
 {
