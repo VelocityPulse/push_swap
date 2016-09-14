@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:12 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/14 10:50:51 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/14 11:13:11 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,7 @@ static int		check_sort(t_checker *c)
 int				main(int argc, char **argv)
 {
 	t_checker	c;
-	int			i;
 
-	i = -1;
 	if (!get_arg(&c, argc, argv))
 		ft_printf("Error\n");
 	else if (!check_dublicate(&c))
@@ -98,6 +96,8 @@ int				main(int argc, char **argv)
 	else
 		ft_printf("OK\n");
 	c.begin = ft_lstline_del(c.begin);
+	ft_memdel((void **)&c.a);
+	ft_memdel((void **)&c.b);
 	return (0);
 }
 
