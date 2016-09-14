@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:04 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/14 14:13:56 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/14 15:21:08 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,19 @@ static int		check_duplicate(t_pushswap *ps)
 	return (_SUCCESS_);
 }
 
+static int		check_sort(t_pushswap *ps)
+{
+	int		i;
+
+	i = ps->len - 1;
+	while (--i >= 0)
+	{
+		if (ps->a[i] > ps->a[i + 1])
+			return (_ERROR_);
+	}
+	return (_SUCCESS_);
+}
+
 int				main(int argc, char **argv)
 {
 	t_pushswap		ps;
@@ -60,5 +73,7 @@ int				main(int argc, char **argv)
 		ft_printf("Error\n");
 	if (!check_duplicate(&ps))
 		ft_printf("Error\n");
+	if (!check_sort(&ps))
+		push_swap(&ps);
 	return (0);
 }
