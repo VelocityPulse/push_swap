@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/12 13:46:22 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/13 16:00:49 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/14 10:49:46 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ static int		easy_rule(t_checker *c, char *rule)
 	}
 	else if (ft_strncmp(rule, "rrr", 3) == 0)
 	{
-		rule_ra(c);
-		rule_rb(c);
+		rule_rra(c);
+		rule_rrb(c);
 	}
 	else if (ft_strncmp(rule, "rr", 2) == 0)
 	{
-		rule_rra(c);
-		rule_rrb(c);
+		rule_ra(c);
+		rule_rb(c);
 	}
 	else
 		return (_ERROR_);

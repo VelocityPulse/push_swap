@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:12 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/13 16:10:33 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/14 10:50:51 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,22 +95,10 @@ int				main(int argc, char **argv)
 		ft_printf("Error\n");
 	else if (!check_sort(&c))
 		ft_printf("KO\n");
-//	else
-//	{
-		ft_printf("OK\n");
-		ft_printf("pile A\n");
-		while (++i < c.tmpa)
-			ft_printf("->%d\n", c.a[i]);
-		i = -1;
-		ft_printf("pile B\n");
-		while (++i < c.tmpb)
-			ft_printf("->%d\n", c.b[i]);
-//	}
-
-/*	else
+	else
 		ft_printf("OK\n");
 	c.begin = ft_lstline_del(c.begin);
-*/	return (0);
+	return (0);
 }
 
 /*
