@@ -6,11 +6,15 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/05 16:30:43 by cchameyr          #+#    #+#              #
-#    Updated: 2016/09/14 10:57:29 by cchameyr         ###   ########.fr        #
+#    Updated: 2016/09/14 15:13:20 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FILES_SWAP =			main.c
+FILES_SWAP =			main.c \
+						rules_a.c \
+						rules_b.c \
+						rules_c.c \
+						push.c
 
 FILES_CHECKER =			main.c \
 						get_next_line.c \
