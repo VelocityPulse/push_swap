@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/05 16:30:43 by cchameyr          #+#    #+#              #
-#    Updated: 2016/09/13 15:34:00 by cchameyr         ###   ########.fr        #
+#    Updated: 2016/09/14 10:57:29 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,3 +89,7 @@ re: fclean all
 r: obj_swap_rm obj_checker_rm
 	$(RM) $(NAME_SWAP) $(NAME_CHECKER)
 	@make
+
+c: $(NAME_CHECKER)
+
+ps: $(NAME_SWAP)
