@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/05 16:30:43 by cchameyr          #+#    #+#              #
-#    Updated: 2016/09/14 15:21:56 by cchameyr         ###   ########.fr        #
+#    Updated: 2016/09/15 11:03:01 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ LIBFT =					libft/libft.a
 
 DEBUGSEGFAULT =			-fsanitize=address
 
-FLAGS =					-Wall -Wextra -Werror #$(DEBUGSEGFAULT)
+FLAGS =#					-Wall -Wextra -Werror #$(DEBUGSEGFAULT)
 
 RM =					rm -rf
 
