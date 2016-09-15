@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/13 15:30:25 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/15 15:18:31 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/15 15:32:14 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	rule_ra(t_pushswap *ps)
 	ps->a[ps->tmpa - 1] = tmp;
 	if (PRINT_RULE)
 		ft_putendl("ra");
+	if (DISPLAY_EVERY_PILES)
+		display(ps);
 	ps->count++;
 }
 
@@ -33,6 +35,8 @@ void	rule_rb(t_pushswap *ps)
 	ps->b[ps->tmpb - 1] = tmp;
 	if (PRINT_RULE)
 		ft_putendl("rb");
+	if (DISPLAY_EVERY_PILES)
+		display(ps);
 	ps->count++;
 }
 
@@ -45,6 +49,8 @@ void	rule_rra(t_pushswap *ps)
 	ps->a[0] = tmp;
 	if (PRINT_RULE)
 		ft_putendl("rra");
+	if (DISPLAY_EVERY_PILES)
+		display(ps);
 	ps->count++;
 }
 
@@ -57,5 +63,7 @@ void	rule_rrb(t_pushswap *ps)
 	ps->b[0] = tmp;
 	if (PRINT_RULE)
 		ft_putendl("rrb");
+	if (DISPLAY_EVERY_PILES)
+		display(ps);
 	ps->count++;
 }

@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 15:15:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/15 13:12:02 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/15 17:06:27 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,22 +46,30 @@ static void		push_good_a(t_pushswap *ps, int n)
 void			push_swap(t_pushswap *ps, int *a, int *b)
 {
 	int		fault;
+	int		tmp;
 
 	rotate_sort_a(ps);
 	while ((fault = check_sort(a, ps->tmpa)) != 0)
 	{
 		if (fault == 1)
-		{
 			rule_sa(ps);
+		if (fault - 1 > ps->tmpa / 2)
+		{
+			tmp = fault;
+			while (++tmp < ps->tmpa)
+				rule_rra(ps);
+			tmp = (ps->tmpa - fault) - 1;
+			push_good_b(ps, tmp);
+			rule_rra(ps);
+			push_good_a(ps, tmp);
+			while (tmp--)
+				rule_ra(ps);
 		}
 		else
 		{
-			ft_printf("%d\n", fault);
 			push_good_b(ps, fault - 1);
 			push_swap(ps, ps->a, ps->b);
-	//		rotate_sort_a(ps);
 			push_good_a(ps, fault - 1);
-			break;
 		}
 	}
 }

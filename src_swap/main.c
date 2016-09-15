@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:04 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/15 12:34:45 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/15 16:10:02 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,32 +71,16 @@ int				main(int argc, char **argv)
 {
 	t_pushswap		ps;
 
+	ps.count = 0;
 	if (!get_arg(&ps, argc, argv))
-		ft_printf("Error\n");
-	if (!check_duplicate(&ps))
-		ft_printf("Error\n");
-	if (!check_basic_sort(&ps))
+		ft_printf("1Error\n");
+	else if (!check_duplicate(&ps))
+		ft_printf("2Error\n");
+	else if (!check_basic_sort(&ps))
 		push_swap(&ps, ps.a, ps.b);
-	ft_printf("pile A\n");
-	int i = -1;
-	while (++i < ps.tmpa)
-		ft_printf("->%d\n", ps.a[i]);
-	i = -1;
-	ft_printf("pile B\n");
-	while (++i < ps.tmpb)
-		ft_printf("->%d\n", ps.b[i]);
-
+	if (DISPLAY_FINAL_PILES)
+		display(&ps);
+	if (COUNT_RULE)
+		ft_printf("number rules : %d\n", ps.count);
 	return (0);
 }
-
-/*
-** test :
-**	ft_printf("pile A\n");
-**	int i = -1;
-**	while (++i < ps.tmpa)
-**		ft_printf("->%d\n", ps.a[i]);
-**	i = -1;
-**	ft_printf("pile B\n");
-**	while (++i < ps.tmpb)
-**		ft_printf("->%d\n", ps.b[i]);
-*/

@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_sort.c                                      :+:      :+:    :+:   */
+/*   display.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/15 12:58:48 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/15 16:03:40 by cchameyr         ###   ########.fr       */
+/*   Created: 2016/09/15 15:21:30 by cchameyr          #+#    #+#             */
+/*   Updated: 2016/09/15 15:41:01 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	rotate_sort_a(t_pushswap *ps)
+void	display(t_pushswap *ps)
 {
 	int		i;
-	int		end;
 
-	if (ps->tmpa < 2)
-		return ;
 	i = -1;
-	end = ps->a[ps->tmpa - 1];
-	if (ps->a[0] > end && end > ps->a[1])
-		rule_ra(ps);
-	else if (ps->a[0] > end && end < ps->a[0])
-		rule_rra(ps);
-}
-
-void	rotate_sort_b(t_pushswap *ps)
-{
-	if (ps->tmpb < 2)
-		return ;
-	while (ps->b[0] > ps->b[ps->tmpb - 1])
-		rule_rrb(ps);
-	while (ps->b[0] < ps->b[ps->tmpb - 1])
-		rule_rb(ps);
+	ft_putendl("Pile A");
+	while (++i < ps->tmpa)
+		ft_printf("->%d", ps->a[i]);
+	i = -1;
+	ft_putendl("\nPile B");
+	while (++i < ps->tmpb)
+		ft_printf("->%d", ps->b[i]);
+	if (ps->tmpb > 0)
+		ft_putchar('\n');
+	ft_putchar('\n');
 }

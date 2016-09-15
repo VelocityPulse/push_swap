@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/05 16:30:43 by cchameyr          #+#    #+#              #
-#    Updated: 2016/09/15 13:03:46 by cchameyr         ###   ########.fr        #
+#    Updated: 2016/09/15 15:31:23 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ FILES_SWAP =			main.c \
 						rules_c.c \
 						push.c \
 						process.c \
-						rotate_sort.c
+						rotate_sort.c \
+						display.c
 
 FILES_CHECKER =			main.c \
 						get_next_line.c \
