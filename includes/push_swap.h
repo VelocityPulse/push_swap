@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 10:55:20 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/15 13:00:47 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/15 15:20:41 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define SWAP_H
 
 # include "../libft/libft.h"
+
+# define COUNT_RULE		1
+# define PRINT_RULE		1
+# define PRINT_PILES	1
 
 # include "debug.h"
 
@@ -24,6 +28,7 @@ typedef struct	s_pushswap
 	int		tmpa;
 	int		tmpb;
 	int		len;
+	int		count;
 }				t_pushswap;
 
 void	push_swap(t_pushswap *ps, int *a, int *b);
