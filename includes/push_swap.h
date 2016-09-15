@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 10:55:20 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/15 10:52:18 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/15 13:00:47 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ typedef struct	s_pushswap
 }				t_pushswap;
 
 void	push_swap(t_pushswap *ps, int *a, int *b);
+void	rotate_sort_a(t_pushswap *ps);
+void	rotate_sort_b(t_pushswap *ps);
+
 
 void	push_up_sort(int *t, int len);
 void	push_back_sort(int *t, int len);

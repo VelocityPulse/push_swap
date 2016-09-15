@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 15:15:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/15 11:35:28 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/15 13:12:02 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int		check_sort(int *t, int len)
 	int		i;
 
 	i = 0;
-	while (++i <= len)
+	while (++i < len)
 	{
 		if (t[i - 1] > t[i])
 			return (i);
@@ -25,20 +25,43 @@ static int		check_sort(int *t, int len)
 	return (0);
 }
 
-static int		rotate_sort(t_pushswap *ps)
+static void		push_good_b(t_pushswap *ps, int n)
 {
-	// faire des rotates pour a et b 
+	int		i;
+
+	i = -1;
+	while (++i < n)
+		rule_pb(ps);
+}
+
+static void		push_good_a(t_pushswap *ps, int n)
+{
+	int		i;
+
+	i = -1;
+	while (++i < n)
+		rule_pa(ps);
 }
 
 void			push_swap(t_pushswap *ps, int *a, int *b)
 {
 	int		fault;
 
-	premide_sort(s, ps->tmpa);
+	rotate_sort_a(ps);
 	while ((fault = check_sort(a, ps->tmpa)) != 0)
 	{
 		if (fault == 1)
+		{
 			rule_sa(ps);
-
+		}
+		else
+		{
+			ft_printf("%d\n", fault);
+			push_good_b(ps, fault - 1);
+			push_swap(ps, ps->a, ps->b);
+	//		rotate_sort_a(ps);
+			push_good_a(ps, fault - 1);
+			break;
+		}
 	}
 }
