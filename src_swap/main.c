@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:04 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/15 16:10:02 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/16 13:38:26 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ static int		check_duplicate(t_pushswap *ps)
 	int		j;
 
 	i = -1;
-	while (++i <= ps->len)
+	while (++i < ps->len)
 	{
 		j = -1;
-		while (++j <= ps->len)
+		while (++j < ps->len)
 		{
 			if (j != i)
 			{
@@ -73,9 +73,9 @@ int				main(int argc, char **argv)
 
 	ps.count = 0;
 	if (!get_arg(&ps, argc, argv))
-		ft_printf("1Error\n");
+		ft_printf("Error\n");
 	else if (!check_duplicate(&ps))
-		ft_printf("2Error\n");
+		ft_printf("Error\n");
 	else if (!check_basic_sort(&ps))
 		push_swap(&ps, ps.a, ps.b);
 	if (DISPLAY_FINAL_PILES)
