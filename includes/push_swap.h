@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 10:55:20 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/16 12:19:43 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/16 13:43:27 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include "../libft/libft.h"
 
-# define COUNT_RULE			0
+# define COUNT_RULE			1
 # define PRINT_RULE			1
-# define DISPLAY_EVERY_PILES	0
+# define DISPLAY_EVERY_PILES	1
 # define DISPLAY_FINAL_PILES	0
 
 # include "debug.h"
