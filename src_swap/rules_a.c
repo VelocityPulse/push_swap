@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/12 14:55:40 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/15 15:32:00 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/16 16:10:12 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	rule_sb(t_pushswap *ps)
 	ft_swap(&ps->b[0], &ps->b[1]);
 	if (PRINT_RULE)
 		ft_putendl("sb");
+	if (DISPLAY_EVERY_PILES)
+		display(ps);
 	ps->count++;
 }
 
