@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 10:55:20 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/16 14:36:15 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/16 16:42:07 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 # define COUNT_RULE			1
 # define PRINT_RULE			1
-# define DISPLAY_EVERY_PILES	1
+# define DISPLAY_EVERY_PILES	0
 # define DISPLAY_FINAL_PILES	0
 
 # include "debug.h"
