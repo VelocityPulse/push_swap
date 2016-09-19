@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 15:15:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/19 15:29:28 by                  ###   ########.fr       */
+/*   Updated: 2016/09/19 17:47:36 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ static void		push_a(t_pushswap *ps, int n)
 	i = -1;
 	while (++i < n)
 	{
-		rotate_swap(ps);
+		while (rotate_swap(ps))
+			;
 		if (ps->b[0] < ps->b[1])
 			rule_sb(ps);
 		rule_pa(ps);
@@ -65,11 +66,12 @@ static int		get_max(int *p, int len)
 
 static int		swap_begin(t_pushswap *ps, int fault)
 {
+	ft_printf("--------BEGIN---------\n");
 	push_b(ps, fault - 1);
-	if (ps->a[0] > ps->b[0] && ps->a[1] < get_max(ps->b, ps->tmpb))
+	if (ps->tmpb && ps->a[0] > ps->b[0] && ps->a[1] < get_max(ps->b, ps->tmpb))
 	{
 		rule_pb(ps);
-		fault++;
+		fault += 2;
 		while (ps->a[0] < get_max(ps->b, ps->tmpb) &&
 			ps->a[0] < ps->a[ps->tmpa - 1])
 			rule_ra(ps);
@@ -80,8 +82,47 @@ static int		swap_begin(t_pushswap *ps, int fault)
 		if (ps->a[1] > ps->a[2])
 			swap_begin(ps, 2);
 	}
-	push_a(ps, fault - 1);
+	push_a(ps, fault);
 	return (_SUCCESS_);
+}
+
+static int		swap_after(t_pushswap *ps, int fault)
+{
+	int		tmp;
+	
+	ft_printf("----------AFTER----------\n");
+	while (1);
+	tmp = fault;
+	while (--tmp)
+		rule_pb(ps);
+	rule_ra(ps);
+	tmp = fault;
+	while (--tmp)
+	{
+//		if ()
+	}
+	return (_SUCCESS_);
+}
+
+void			free_good(t_pushswap *ps)
+{
+	int		i;
+	int		j;
+	int		flag;
+
+	i = -1;
+	flag = 0;
+	while (flag == 0 && ++i < ps->tmpa)
+	{
+		j = i;
+		while (flag == 0 && ++j < ps->tmpa)
+		{
+			if (ps->a[j] < ps->a[i])
+				flag = 1;
+		}
+	}
+	while (i--)
+		rule_pb(ps);
 }
 
 void			push_swap(t_pushswap *ps, int *a, int *b)
@@ -98,11 +139,19 @@ void			push_swap(t_pushswap *ps, int *a, int *b)
 			if (fault <= ps->tmpa / 2)
 			{
 				swap_begin(ps, fault);
-				while (ps->tmpb)
-					rule_pa(ps);
+//				while (1);
+//				while (ps->tmpb)
+//					rule_pa(ps);
+			}
+			else
+			{
+				free_good(ps);
+		//		swap_after(ps, fault);
 			}
 		}
 		rotate_basic_a(ps);
 	}
+	while (ps->tmpb)
+		rule_pa(ps);
 	ft_printf("termine\n");
 }

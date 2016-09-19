@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/15 12:58:48 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/19 15:29:06 by                  ###   ########.fr       */
+/*   Updated: 2016/09/19 17:41:07 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,14 @@ static void		rotate_hard_help(t_pushswap *ps, int i, int tmp, int tmp2)
 	while (tmp--)
 		rule_rra(ps);
 	tmp = factor_good + 1;
+	if (tmp == 1 && (tmp2 - i) - 1 <= 0)
+		return ;
 	while (tmp--)
 		rule_pb(ps);
 	tmp = (tmp2 - i) - 1;
 	while (tmp--)
 		rule_ra(ps);
-	tmp = (tmp2 - i) + factor_good;
+	tmp = factor_good + 1;
 	while (tmp--)
 		rule_pa(ps);
 }
@@ -85,7 +87,6 @@ int			rotate_swap(t_pushswap *ps)
 
 	i_end = ps->tmpa;
 	i = 0;
-
 	while (ps->a[i_end - i] < ps->a[0] && i < ps->tmpa)
 	{
 		if (ps->a[(i_end - i) - 1] < ps->a[0])
