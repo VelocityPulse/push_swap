@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 10:55:20 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/16 16:42:07 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/19 12:42:31 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 # define COUNT_RULE			1
 # define PRINT_RULE			1
-# define DISPLAY_EVERY_PILES	0
+# define DISPLAY_EVERY_PILES	1
 # define DISPLAY_FINAL_PILES	0
 
 # include "debug.h"
@@ -35,6 +35,7 @@ typedef struct	s_pushswap
 void			push_swap(t_pushswap *ps, int *a, int *b);
 int				rotate_basic_a(t_pushswap *ps);
 int				rotate_hard_a(t_pushswap *ps);
+int				rotate_swap(t_pushswap *ps);
 
 void			push_up_sort(int *t, int len);
 void			push_back_sort(int *t, int len);

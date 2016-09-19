@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 15:15:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/16 16:42:26 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/19 15:29:28 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,7 @@ static void		push_b(t_pushswap *ps, int n)
 	while (++i < n)
 	{
 		rule_pb(ps);
-		if (ps->b[0] < ps->b[1])
-		{
-			if (ps->tmpb > 1 && ps->b[0] > ps->b[2])
-				rule_sb(ps);
-		}
 	}
-	ft_printf("end\n");
 }
 
 static void		push_a(t_pushswap *ps, int n)
@@ -49,23 +43,46 @@ static void		push_a(t_pushswap *ps, int n)
 	i = -1;
 	while (++i < n)
 	{
+		rotate_swap(ps);
+		if (ps->b[0] < ps->b[1])
+			rule_sb(ps);
 		rule_pa(ps);
-		if (ps->a[0] > ps->a[1])
-				rule_sa(ps);
 	}
+}
+
+static int		get_max(int *p, int len)
+{
+	int		max;
+
+	max = 0;
+	while (--len)
+	{
+		if (max < p[len])
+			max = p[len];
+	}
+	return (max);
 }
 
 static int		swap_begin(t_pushswap *ps, int fault)
 {
-	YOLO
 	push_b(ps, fault - 1);
-	rule_sa(ps);
-	if (ps->a[1] > ps->a[2])
-		swap_begin(ps, 2);
+	if (ps->a[0] > ps->b[0] && ps->a[1] < get_max(ps->b, ps->tmpb))
+	{
+		rule_pb(ps);
+		fault++;
+		while (ps->a[0] < get_max(ps->b, ps->tmpb) &&
+			ps->a[0] < ps->a[ps->tmpa - 1])
+			rule_ra(ps);
+	}
+	else
+	{
+		rule_sa(ps);
+		if (ps->a[1] > ps->a[2])
+			swap_begin(ps, 2);
+	}
 	push_a(ps, fault - 1);
 	return (_SUCCESS_);
 }
-
 
 void			push_swap(t_pushswap *ps, int *a, int *b)
 {
@@ -74,12 +91,18 @@ void			push_swap(t_pushswap *ps, int *a, int *b)
 
 	while ((fault = check_sort(a, ps->tmpa)) != 0)
 	{
-		if (swap_begin(ps, fault))
-//			while (1);
-			ft_printf("end mode1\n");
-		else if (rotate_basic_a(ps))
-			ft_printf("end mode2\n");
-		else if (rotate_hard_a(ps))
-			ft_printf("end mode3\n");
+		if (rotate_hard_a(ps))
+			;
+		else
+		{
+			if (fault <= ps->tmpa / 2)
+			{
+				swap_begin(ps, fault);
+				while (ps->tmpb)
+					rule_pa(ps);
+			}
+		}
+		rotate_basic_a(ps);
 	}
+	ft_printf("termine\n");
 }
