@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:04 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/16 13:38:26 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/19 18:00:30 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int				main(int argc, char **argv)
 	else if (!check_duplicate(&ps))
 		ft_printf("Error\n");
 	else if (!check_basic_sort(&ps))
-		push_swap(&ps, ps.a, ps.b);
+		push_swap(&ps);
 	if (DISPLAY_FINAL_PILES)
 		display(&ps);
 	if (COUNT_RULE)
