@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 15:15:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/19 18:31:14 by                  ###   ########.fr       */
+/*   Updated: 2016/09/21 10:32:46 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int		get_max(int *p, int len)
 	int		max;
 
 	max = -2147483648;
-	while (--len)
+	while (len--)
 	{
 		if (max < p[len])
 			max = p[len];
@@ -48,12 +48,10 @@ static int		get_index_up(t_pushswap *ps, int present)
 	while (++i < ps->tmpa)
 	{
 		if (ps->a[i] > present && ps->a[i] < tmp)
-		{
 			tmp = ps->a[i];
-		}
 	}
 	i = -1;
-	while (++i < ps->tmpa)
+	while (++i <= ps->tmpa)
 	{
 		if (ps->a[i] == tmp)
 			return (i);
@@ -80,7 +78,7 @@ void			push_swap(t_pushswap *ps)
 	int		min;
 
 	min = get_min(ps->a, ps->tmpa);
-	while (min != get_max(ps->a, ps->tmpa))
+	while (min < get_max(ps->a, ps->tmpa))
 	{
 		i = get_index(ps, min);
 		if (i < ps->tmpa / 2)
@@ -95,9 +93,7 @@ void			push_swap(t_pushswap *ps)
 		}
 		rule_pb(ps);
 		min = ps->a[get_index_up(ps, min)];
-		ft_printf("new_min = %d\n", min);
 	}
 	while (ps->tmpb)
 		rule_pa(ps);
-	ft_printf("termine\n");
 }
