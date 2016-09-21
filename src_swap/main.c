@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:04 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/21 12:44:49 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/21 14:41:32 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,7 @@ int				main(int argc, char **argv)
 		display(&ps);
 	if (COUNT_RULE)
 		ft_printf("number rules : %d\n", ps.count);
+	ft_memdel((void **)&ps.a);
+	ft_memdel((void **)&ps.b);
 	return (0);
 }
