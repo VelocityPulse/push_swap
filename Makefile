@@ -16,7 +16,8 @@ FILES_SWAP =			main.c \
 						rules_c.c \
 						push.c \
 						process.c \
-						display.c
+						display.c \
+						get_values.c
 
 FILES_CHECKER =			main.c \
 						get_next_line.c \

@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 10:55:20 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/19 18:33:23 by                  ###   ########.fr       */
+/*   Updated: 2016/09/21 11:03:18 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ void			push_swap(t_pushswap *ps);
 
 void			push_up_sort(int *t, int len);
 void			push_back_sort(int *t, int len);
+
+int				get_fault(int *p, int len);
+int				get_max(int *p, int len);
+int				get_min(int *p, int len);
+int				get_index_up(t_pushswap *ps, int present);
+int				get_index(t_pushswap *ps, int present);
 
 void			rule_sa(t_pushswap *ps);
 void			rule_sb(t_pushswap *ps);
