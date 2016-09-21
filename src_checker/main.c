@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:12 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/21 11:19:42 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/21 14:42:17 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ static int		get_rules(t_checker *c)
 	line = NULL;
 	while (get_next_line(0, &line) > 0)
 		c->begin = ft_add_lstline(c->begin, line);
-	if (c->begin == NULL)
-		return (_ERROR_);
 	return (_SUCCESS_);
 }
 
@@ -100,17 +98,3 @@ int				main(int argc, char **argv)
 	ft_memdel((void **)&c.b);
 	return (0);
 }
-
-/*
-** test :
-**	else
-**	{
-**		ft_printf("pile A\n");
-**		while (++i < c.tmpa)
-**			ft_printf("->%d\n", c.a[i]);
-**		i = -1;
-**		ft_printf("pile B\n");
-**		while (++i < c.tmpb)
-**			ft_printf("->%d\n", c.b[i]);
-**	}
-*/
