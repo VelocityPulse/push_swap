@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:29:22 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/14 10:56:08 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/21 16:07:17 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct	s_checker
 	int			len;
 	t_lstline	*begin;
 }				t_checker;
+
+int		get_arg(t_checker *c, int ac, char **av);
 
 int		make_rules(t_checker *c);
 

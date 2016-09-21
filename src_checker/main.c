@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:12 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/21 14:42:17 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/21 16:07:57 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,35 +22,16 @@ static int		get_rules(t_checker *c)
 	return (_SUCCESS_);
 }
 
-static int		get_arg(t_checker *c, int ac, char **av)
-{
-	int		i;
-
-	i = 0;
-	while (++i < ac)
-	{
-		if (!ft_strisdigit(av[i]))
-			return (_ERROR_);
-	}
-	c->len = ac - 1;
-	c->a = (int *)ft_memalloc(sizeof(int) * (ac - 1));
-	c->b = (int *)ft_memalloc(sizeof(int) * (ac - 1));
-	i = 0;
-	while (++i < ac)
-		c->a[i - 1] = ft_atoi(av[i]);
-	return (_SUCCESS_);
-}
-
 static int		check_dublicate(t_checker *c)
 {
 	int		i;
 	int		j;
 
 	i = -1;
-	while (++i <= c->len)
+	while (++i < c->len)
 	{
 		j = -1;
-		while (++j <= c->len)
+		while (++j < c->len)
 		{
 			if (j != i)
 			{

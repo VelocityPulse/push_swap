@@ -24,7 +24,8 @@ FILES_CHECKER =			main.c \
 						make_rules.c \
 						rules_a.c \
 						rules_b.c \
-						push.c
+						push.c \
+						get_arg.c
  
 SRC_SWAP =				$(addprefix src_swap/, $(FILES_SWAP))
 
@@ -44,7 +45,7 @@ LIBFT =					libft/libft.a
 
 DEBUGSEGFAULT =			-fsanitize=address
 
-FLAGS =#					-Wall -Wextra -Werror #$(DEBUGSEGFAULT)
+FLAGS =					-Wall -Wextra -Werror $(DEBUGSEGFAULT)
 
 RM =					rm -rf
 

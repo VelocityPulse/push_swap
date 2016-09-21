@@ -6,30 +6,56 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:04 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/21 14:41:32 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/21 17:04:52 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+static void		get_arg_help(t_pushswap *ps, int ac, char **av)
+{
+	char	**list;
+	int		i;
+	int		j;
+	int		tmp;
+
+	ps->a = (int *)ft_memalloc(sizeof(int) * (ps->len));
+	ps->b = (int *)ft_memalloc(sizeof(int) * (ps->len));
+	i = 0;
+	tmp = -1;
+	while (++i < ac)
+	{
+		list = ft_strsplit(av[i], ' ');
+		j = -1;
+		while (list[++j])
+			ps->a[++tmp] = ft_atoi(list[j]);
+		ft_memdel2((void ***)&list);
+	}
+	ps->tmpa = ps->len;
+	ps->tmpb = 0;
+}
+
 static int		get_arg(t_pushswap *ps, int ac, char **av)
 {
 	int		i;
+	int		j;
+	char	**list;
 
 	i = 0;
+	ps->len = 0;
 	while (++i < ac)
 	{
-		if (!ft_strisdigit(av[i]))
-			return (_ERROR_);
+		list = ft_strsplit(av[i], ' ');
+		j = -1;
+		while (list[++j])
+		{
+			if (!ft_strisdigit(list[j]))
+				return (_ERROR_);
+			ps->len++;
+		}
+		ft_memdel2((void ***)&list);
 	}
-	ps->len = ac - 1;
-	ps->tmpa = ps->len;
-	ps->tmpb = 0;
-	ps->a = (int *)ft_memalloc(sizeof(int) * (ac - 1));
-	ps->b = (int *)ft_memalloc(sizeof(int) * (ac - 1));
-	i = 0;
-	while (++i < ac)
-		ps->a[i - 1] = ft_atoi(av[i]);
+	get_arg_help(ps, ac, av);
 	return (_SUCCESS_);
 }
 
