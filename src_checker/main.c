@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:12 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/14 14:13:55 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/21 11:19:42 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,13 +84,13 @@ int				main(int argc, char **argv)
 	t_checker	c;
 
 	if (!get_arg(&c, argc, argv))
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 	else if (!check_dublicate(&c))
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 	else if (!get_rules(&c))
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 	else if (!make_rules(&c))
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 	else if (!check_sort(&c))
 		ft_printf("KO\n");
 	else

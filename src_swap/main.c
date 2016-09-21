@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:04 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/19 18:00:30 by                  ###   ########.fr       */
+/*   Updated: 2016/09/21 12:44:49 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int		get_arg(t_pushswap *ps, int ac, char **av)
 {
 	int		i;
 
-	i = -1;
+	i = 0;
 	while (++i < ac)
 	{
 		if (!ft_strisdigit(av[i]))
@@ -73,9 +73,9 @@ int				main(int argc, char **argv)
 
 	ps.count = 0;
 	if (!get_arg(&ps, argc, argv))
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 	else if (!check_duplicate(&ps))
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 	else if (!check_basic_sort(&ps))
 		push_swap(&ps);
 	if (DISPLAY_FINAL_PILES)
