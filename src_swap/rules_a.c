@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/12 14:55:40 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/16 16:10:12 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/22 11:46:38 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	rule_sa(t_pushswap *ps)
 	if (ps->tmpa < 2)
 		return ;
 	ft_swap(&ps->a[0], &ps->a[1]);
-	if (PRINT_RULE)
+	if (ps->print_rules == true)
 		ft_putendl("sa");
-	if (DISPLAY_EVERY_PILES)
+	if (ps->print_display == true)
 		display(ps);
 	ps->count++;
 }
@@ -29,9 +29,9 @@ void	rule_sb(t_pushswap *ps)
 	if (ps->tmpb < 2)
 		return ;
 	ft_swap(&ps->b[0], &ps->b[1]);
-	if (PRINT_RULE)
+	if (ps->print_rules == true)
 		ft_putendl("sb");
-	if (DISPLAY_EVERY_PILES)
+	if (ps->print_display == true)
 		display(ps);
 	ps->count++;
 }
@@ -49,9 +49,9 @@ void	rule_pa(t_pushswap *ps)
 	else
 		ps->tmpa++;
 	ps->a[0] = tmp;
-	if (PRINT_RULE)
+	if (ps->print_rules == true)
 		ft_putendl("pa");
-	if (DISPLAY_EVERY_PILES)
+	if (ps->print_display == true)
 		display(ps);
 	ps->count++;
 }
@@ -69,9 +69,9 @@ void	rule_pb(t_pushswap *ps)
 	else
 		ps->tmpb++;
 	ps->b[0] = tmp;
-	if (PRINT_RULE)
+	if (ps->print_rules == true)
 		ft_putendl("pb");
-	if (DISPLAY_EVERY_PILES)
+	if (ps->print_display == true)
 		display(ps);
 	ps->count++;
 }

@@ -6,21 +6,14 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 10:55:20 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/19 16:53:45 by                  ###   ########.fr       */
+/*   Updated: 2016/09/22 14:05:39 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SWAP_H
-# define SWAP_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-
-# define COUNT_RULE			1
-# define PRINT_RULE			1
-# define DISPLAY_EVERY_PILES	1
-# define DISPLAY_FINAL_PILES	0
-
-# include "debug.h"
 
 typedef struct	s_pushswap
 {
@@ -30,15 +23,25 @@ typedef struct	s_pushswap
 	int		tmpb;
 	int		len;
 	int		count;
+	int		arg;
+	t_bool	count_rules;
+	t_bool	print_rules;
+	t_bool	final_display;
+	t_bool	print_display;
 }				t_pushswap;
 
-void			push_swap(t_pushswap *ps, int *a, int *b);
-int				rotate_basic_a(t_pushswap *ps);
-int				rotate_hard_a(t_pushswap *ps);
-int				rotate_swap(t_pushswap *ps);
+int				get_arg(t_pushswap *ps, int ac, char **av, int arg);
+
+void			push_swap(t_pushswap *ps);
 
 void			push_up_sort(int *t, int len);
 void			push_back_sort(int *t, int len);
+
+int				get_fault(int *p, int len);
+int				get_max(int *p, int len);
+int				get_min(int *p, int len);
+int				get_index_up(t_pushswap *ps, int present);
+int				get_index(t_pushswap *ps, int present);
 
 void			rule_sa(t_pushswap *ps);
 void			rule_sb(t_pushswap *ps);

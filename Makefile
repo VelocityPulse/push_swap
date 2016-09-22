@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/05 16:30:43 by cchameyr          #+#    #+#              #
-#    Updated: 2016/09/15 15:31:23 by cchameyr         ###   ########.fr        #
+#*   Updated: 2016/09/19 17:50:06 by                  ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,17 @@ FILES_SWAP =			main.c \
 						rules_c.c \
 						push.c \
 						process.c \
-						rotate_sort.c \
-						display.c
+						display.c \
+						get_values.c \
+						get_arg.c
 
 FILES_CHECKER =			main.c \
 						get_next_line.c \
 						make_rules.c \
 						rules_a.c \
 						rules_b.c \
-						push.c
+						push.c \
+						get_arg.c
  
 SRC_SWAP =				$(addprefix src_swap/, $(FILES_SWAP))
 
@@ -44,7 +46,7 @@ LIBFT =					libft/libft.a
 
 DEBUGSEGFAULT =			-fsanitize=address
 
-FLAGS =#					-Wall -Wextra -Werror #$(DEBUGSEGFAULT)
+FLAGS =					-Wall -Wextra -Werror $(DEBUGSEGFAULT)
 
 RM =					rm -rf
 
