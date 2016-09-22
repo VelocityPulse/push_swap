@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/12 14:55:40 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/21 17:15:44 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/22 13:55:46 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	rule_pa(t_checker *c)
 	tmp = c->b[0];
 	push_up_sort(c->b, c->tmpb--);
 	if (c->tmpa > 0)
-	push_back_sort(c->a, ++c->tmpa);
+		push_back_sort(c->a, ++c->tmpa);
 	else
 		c->tmpa++;
 	c->a[0] = tmp;

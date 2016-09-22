@@ -6,11 +6,25 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 15:15:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/22 13:40:23 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/22 13:58:17 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+static void		algo(t_pushswap *ps, int i)
+{
+	if (i < ps->tmpa / 2)
+	{
+		while (i--)
+			rule_ra(ps);
+	}
+	else
+	{
+		while (++i <= ps->tmpa)
+			rule_rra(ps);
+	}
+}
 
 void			push_swap(t_pushswap *ps)
 {
@@ -25,16 +39,7 @@ void			push_swap(t_pushswap *ps)
 		i = get_index(ps, min);
 		if (get_fault(ps->a, ps->tmpa) == 0)
 			break ;
-		if (i < ps->tmpa / 2)
-		{
-			while (i--)
-				rule_ra(ps);
-		}
-		else
-		{
-			while (++i <= ps->tmpa)
-				rule_rra(ps);
-		}
+		algo(ps, i);
 		if (get_fault(ps->a, ps->tmpa) == 0)
 			break ;
 		rule_pb(ps);

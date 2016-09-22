@@ -6,13 +6,13 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 11:13:21 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/22 11:44:11 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/22 13:57:02 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void		get_arg_help(t_pushswap *ps, int ac, char **av, int arg)
+void	get_arg_help(t_pushswap *ps, int ac, char **av, int arg)
 {
 	char	**list;
 	int		i;
