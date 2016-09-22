@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 10:34:54 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/21 16:24:41 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/22 13:39:24 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,8 @@ int		get_min(int *p, int len)
 	int		min;
 
 	min = 2147483647;
-	len--;
-	while (--len)
+	while (len--)
 	{
-
 		if (min > p[len])
 			min = p[len];
 	}

@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:04 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/22 11:53:31 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/22 13:36:55 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int				main(int argc, char **argv)
 	ps.print_display = false;
 	if ((ps.arg = get_mode(&ps, argc, argv)) == -1)
 		ft_putstr("help:\n-v : display all piles\n-e : display final pile\n\
--c : count total piles\n-b : undisplay rules\n");
+-c : count total rules\n-b : undisplay rules\n");
 	else if (!get_arg(&ps, argc, argv, ps.arg))
 		ft_putstr_fd("Error\n", 2);
 	else if (!check_duplicate(&ps))
@@ -92,7 +92,7 @@ int				main(int argc, char **argv)
 		push_swap(&ps);
 		if (ps.final_display == true)
 			display(&ps);
-		if (ps.print_rules == true)
+		if (ps.count_rules == true)
 			ft_printf("number rules : %d\n", ps.count);
 	}
 	ft_memdel((void **)&ps.a);

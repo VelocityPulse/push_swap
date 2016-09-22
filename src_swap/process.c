@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 15:15:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/21 16:30:56 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/09/22 13:40:23 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void			push_swap(t_pushswap *ps)
 	int		i;
 	int		min;
 
+	if (ps->print_display == true || ps->final_display == true)
+		display(ps);
 	min = get_min(ps->a, ps->tmpa);
 	while (min < get_max(ps->a, ps->tmpa))
 	{
