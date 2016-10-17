@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 15:15:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/10/17 13:12:31 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/17 17:14:06 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,19 @@ static int		algo_reverse(t_pushswap *ps)
 	return (_SUCCESS_);
 }
 
+static void		segment_sort(t_pushswao *ps, int stage)
+{
+	
+}
+
 void			push_swap(t_pushswap *ps)
 {
-	int		i;
-	int		min;
 
 	if (ps->print_display == true || ps->final_display == true)
 		display(ps);
-		if (algo_reverse(ps) == _SUCCESS_)
-			return ;
+	if (algo_reverse(ps) == _SUCCESS_)
+		return ;
+
+	sample_sort_list();
+	segment_sort();
 }
