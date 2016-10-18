@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 15:15:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/10/18 17:37:31 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/18 17:54:39 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,29 +67,6 @@ static void		segment_sort(t_pushswap *ps, int stage)
 			rule_ra(ps);
 		rule_pb(ps);
 	}
-}
-
-static int		segment_len(int len)
-{
-	if (len >= 4000)
-		return (35);
-	if (len >= 2000)
-		return (25);
-	if (len >= 1000)
-		return (20);
-	if (len >= 500)
-		return (14);
-	if (len >= 400)
-		return (12);
-	if (len >= 300)
-		return (10);
-	if (len >= 200)
-		return (8);
-	if (len >= 100)
-		return (5);
-	if (len >= 25)
-		return (4);
-	return (2);
 }
 
 void			push_swap(t_pushswap *ps)

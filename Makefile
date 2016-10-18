@@ -22,6 +22,8 @@ FILES_SWAP =			main.c \
 						sort_sample_list.c \
 						rotate_sort.c
 
+SPECIAL_FILE =			special/confidential/top_secret/critical/segment_len.c
+
 FILES_CHECKER =			main.c \
 						get_next_line.c \
 						make_rules.c \
@@ -30,11 +32,11 @@ FILES_CHECKER =			main.c \
 						push.c \
 						get_arg.c
  
-SRC_SWAP =				$(addprefix src_swap/, $(FILES_SWAP))
+SRC_SWAP =				$(addprefix src_swap/, $(FILES_SWAP) $(SPECIAL_FILE))
 
 SRC_CHECKER =			$(addprefix src_checker/, $(FILES_CHECKER))
 
-OBJS_SWAP =				$(addprefix obj_swap/, $(FILES_SWAP:.c=.o))
+OBJS_SWAP =				$(addprefix obj_swap/, $(FILES_SWAP:.c=.o)) obj_swap/segment_len.o
 
 OBJS_CHECKER =			$(addprefix obj_checker/, $(FILES_CHECKER:.c=.o))
 
@@ -79,7 +81,7 @@ $(OBJS_SWAP):
 
 obj_swap_mv:
 	@mkdir obj_swap
-	@mv $(FILES_SWAP:.c=.o) ./obj_swap/
+	@mv $(FILES_SWAP:.c=.o) segment_len.o ./obj_swap/
 
 obj_swap_rm:
 	@$(RM) ./obj_swap

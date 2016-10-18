@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 10:55:20 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/10/18 16:27:20 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/18 17:53:28 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct	s_pushswap
 
 int				get_arg(t_pushswap *ps, int ac, char **av, int arg);
 
+int				segment_len(int len);
 void			push_swap(t_pushswap *ps);
 
 void			sort_sample_list(int *list, int beg, int end);

@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 14:11:05 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/10/18 17:33:27 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/18 17:43:09 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void		fusion(int *list, int begin, int mid, int end)
 	while (++i <= end)
 	{
 		if (cpt1 == begin2)
-			break;
+			break ;
 		else if (cpt2 == (end + 1))
 			list[i] = tmp[cpt1++ - begin];
 		else if (tmp[cpt1 - begin] < list[cpt2])
