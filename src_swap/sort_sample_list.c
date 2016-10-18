@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 14:11:05 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/10/18 16:42:28 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/18 17:33:27 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ static void		fusion(int *list, int begin, int mid, int end)
 
 	tmp = (int *)ft_memalloc(sizeof(int) * (mid - begin + 1));
 	cpt1 = fusion_help(&begin2, &cpt2, mid, begin);
-	i = begin;
-	while (i++ < mid)
+	i = begin - 1;
+	while (++i <= mid)
 		tmp[i - begin] = list[i];
-	i = begin;
-	while (i++ <= end)
+	i = begin - 1;
+	while (++i <= end)
 	{
 		if (cpt1 == begin2)
 			break;

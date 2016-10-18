@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 15:15:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/10/18 16:55:52 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/18 17:37:31 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,9 +109,9 @@ void			push_swap(t_pushswap *ps)
 		return ;
 	sorted = ft_intdup(ps->a, ps->len);
 	sort_sample_list(sorted, 0, ps->len - 1);
-	segment = segment_len(ps->len);
-	cpt = segment;
-	stage = ps->len / segment;
+	cpt = segment_len(ps->len);
+	stage = ps->len / cpt;
+	segment = stage;
 	while (cpt-- > 1)
 	{
 		segment_sort(ps, sorted[stage]);
@@ -120,5 +120,5 @@ void			push_swap(t_pushswap *ps)
 	while (ps->tmpa)
 		rule_pb(ps);
 	insertion_algo(ps);
-	ft_memdel((void **)sorted);
+	ft_memdel((void **)&sorted);
 }
