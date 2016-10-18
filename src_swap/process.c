@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 15:15:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/10/18 14:09:20 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/18 16:55:52 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,10 @@ void			push_swap(t_pushswap *ps)
 	if (ps->print_display == true || ps->final_display == true)
 		display(ps);
 	if (algo_reverse(ps) == _SUCCESS_)
+		return ;
+	while (rotate_hard_a(ps) == _SUCCESS_ || rotate_basic_a(ps) == _SUCCESS_)
+		;
+	if (get_fault(ps->a, ps->tmpa) == 0)
 		return ;
 	sorted = ft_intdup(ps->a, ps->len);
 	sort_sample_list(sorted, 0, ps->len - 1);
