@@ -6,11 +6,11 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/18 17:49:54 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/10/18 18:06:18 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/18 18:09:53 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../../../includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 int		segment_len(int len)
 {
