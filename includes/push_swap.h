@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 10:55:20 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/10/19 13:18:48 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/19 15:08:02 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
+
+# define NO_FAULT		0
+# define EASY_ROTATE	1
+# define HARD_ROTATE	2
 
 typedef struct	s_pushswap
 {
@@ -32,6 +36,8 @@ typedef struct	s_pushswap
 
 int				get_arg(t_pushswap *ps, int ac, char **av, int arg);
 
+int				algo_reverse(t_pushswap *ps);
+int				easy_begin(t_pushswap *ps);
 void			push_swap(t_pushswap *ps);
 
 void			sort_sample_list(int *list, int beg, int end);

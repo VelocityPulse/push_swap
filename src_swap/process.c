@@ -6,13 +6,13 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 15:15:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/10/19 13:18:50 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/19 15:08:03 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int		algo_reverse(t_pushswap *ps)
+int				algo_reverse(t_pushswap *ps)
 {
 	int		cpt;
 
@@ -101,11 +101,7 @@ void			push_swap(t_pushswap *ps)
 
 	if (ps->print_display == true || ps->final_display == true)
 		display(ps);
-	if (algo_reverse(ps) == _SUCCESS_)
-		return ;
-	while (rotate_hard_a(ps) == _SUCCESS_ || rotate_basic_a(ps) == _SUCCESS_)
-		;
-	if (get_fault(ps->a, ps->tmpa) == 0)
+	if (easy_begin(ps) == _SUCCESS_)
 		return ;
 	sorted = ft_intdup(ps->a, ps->len);
 	sort_sample_list(sorted, 0, ps->len - 1);
