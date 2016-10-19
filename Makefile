@@ -21,7 +21,6 @@ FILES_SWAP =			main.c \
 						get_arg.c \
 						sort_sample_list.c \
 						rotate_sort.c \
-						segment_len.c
 
 
 FILES_CHECKER =			main.c \
