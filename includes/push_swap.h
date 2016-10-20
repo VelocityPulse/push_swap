@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 10:55:20 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/22 14:05:39 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/19 15:08:02 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
+
+# define NO_FAULT		0
+# define EASY_ROTATE	1
+# define HARD_ROTATE	2
 
 typedef struct	s_pushswap
 {
@@ -32,16 +36,16 @@ typedef struct	s_pushswap
 
 int				get_arg(t_pushswap *ps, int ac, char **av, int arg);
 
+int				algo_reverse(t_pushswap *ps);
+int				easy_begin(t_pushswap *ps);
 void			push_swap(t_pushswap *ps);
 
-void			push_up_sort(int *t, int len);
-void			push_back_sort(int *t, int len);
+void			sort_sample_list(int *list, int beg, int end);
 
 int				get_fault(int *p, int len);
 int				get_max(int *p, int len);
 int				get_min(int *p, int len);
-int				get_index_up(t_pushswap *ps, int present);
-int				get_index(t_pushswap *ps, int present);
+int				get_index(int *p, int len, int present);
 
 void			rule_sa(t_pushswap *ps);
 void			rule_sb(t_pushswap *ps);
@@ -54,6 +58,11 @@ void			rule_rrb(t_pushswap *ps);
 void			rule_ss(t_pushswap *ps);
 void			rule_rr(t_pushswap *ps);
 void			rule_rrr(t_pushswap *ps);
+void			push_up_sort(int *t, int len);
+void			push_back_sort(int *t, int len);
+
+int				rotate_basic_a(t_pushswap *ps);
+int				rotate_hard_a(t_pushswap *ps);
 
 void			display(t_pushswap *ps);
 

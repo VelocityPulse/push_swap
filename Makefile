@@ -18,7 +18,10 @@ FILES_SWAP =			main.c \
 						process.c \
 						display.c \
 						get_values.c \
-						get_arg.c
+						get_arg.c \
+						sort_sample_list.c \
+						rotate_sort.c \
+						easy_begin.c
 
 FILES_CHECKER =			main.c \
 						get_next_line.c \

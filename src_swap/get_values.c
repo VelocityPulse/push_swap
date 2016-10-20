@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 10:34:54 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/22 13:56:36 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/18 10:26:06 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,35 +51,14 @@ int		get_min(int *p, int len)
 	return (min);
 }
 
-int		get_index_up(t_pushswap *ps, int present)
-{
-	int		i;
-	int		tmp;
-
-	i = -1;
-	tmp = 2147483647;
-	while (++i < ps->tmpa)
-	{
-		if (ps->a[i] > present && ps->a[i] < tmp)
-			tmp = ps->a[i];
-	}
-	i = -1;
-	while (++i <= ps->tmpa)
-	{
-		if (ps->a[i] == tmp)
-			return (i);
-	}
-	return (_ERROR_);
-}
-
-int		get_index(t_pushswap *ps, int present)
+int		get_index(int *p, int len, int present)
 {
 	int		i;
 
 	i = -1;
-	while (++i < ps->tmpa)
+	while (++i < len)
 	{
-		if (ps->a[i] == present)
+		if (p[i] == present)
 			break ;
 	}
 	return (i);
