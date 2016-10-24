@@ -6,12 +6,14 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:29:22 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/10/24 12:51:14 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/24 13:20:24 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
+
+# include <unistd.h>
 
 # include "../libft/libft.h"
 # include "get_next_line.h"
