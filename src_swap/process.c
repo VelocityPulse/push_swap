@@ -6,32 +6,11 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/14 15:15:15 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/10/19 15:08:03 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/24 14:17:44 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-int				algo_reverse(t_pushswap *ps)
-{
-	int		cpt;
-
-	cpt = 0;
-	while (cpt < ps->tmpa - 1)
-	{
-		if (ps->a[cpt] < ps->a[cpt + 1])
-			return (_ERROR_);
-		cpt++;
-	}
-	while (ps->tmpa > 1)
-	{
-		rule_rra(ps);
-		rule_pb(ps);
-	}
-	while (ps->tmpb)
-		rule_pa(ps);
-	return (_SUCCESS_);
-}
 
 static void		insertion_algo(t_pushswap *ps)
 {
@@ -52,6 +31,33 @@ static void		insertion_algo(t_pushswap *ps)
 		}
 		rule_pa(ps);
 	}
+}
+
+int				algo_reverse(t_pushswap *ps)
+{
+	int		cpt;
+
+	cpt = 0;
+	while (cpt < ps->tmpa - 1)
+	{
+		if (ps->a[cpt] < ps->a[cpt + 1])
+			return (_ERROR_);
+		cpt++;
+	}
+	if (cpt == 2)
+	{
+		rule_sa(ps);
+		rule_rra(ps);
+		return (_SUCCESS_);
+	}
+	while (ps->tmpa > 1)
+	{
+		rule_rra(ps);
+		rule_pb(ps);
+	}
+	while (ps->tmpb)
+		rule_pa(ps);
+	return (_SUCCESS_);
 }
 
 static void		segment_sort(t_pushswap *ps, int stage)

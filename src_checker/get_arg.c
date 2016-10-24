@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 16:04:47 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/10/24 12:52:22 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/24 13:20:59 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void		get_arg_help(t_checker *c, int ac, char **av)
 			if (ft_strlen(list[j]) > 10)
 			{
 				ft_putstr_fd("Error\n", 2);
-				exit(0);
+				_exit(0);
 			}
 			c->a[++tmp] = ft_atoi(list[j]);
 		}
