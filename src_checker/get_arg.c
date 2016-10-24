@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 16:04:47 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/21 17:14:27 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/24 12:41:56 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,16 @@ static void		get_arg_help(t_checker *c, int ac, char **av)
 		list = ft_strsplit(av[i], ' ');
 		j = -1;
 		while (list[++j])
+		{
+			if (ft_strlen(list[j]) > 10)
+			{
+				ft_putstr("Error\n");
+				exit(0);
+			}
 			c->a[++tmp] = ft_atoi(list[j]);
+		}
 		ft_memdel2((void ***)&list);
 	}
-	c->tmpa = c->len;
-	c->tmpb = 0;
 }
 
 int				get_arg(t_checker *c, int ac, char **av)
@@ -56,5 +61,7 @@ int				get_arg(t_checker *c, int ac, char **av)
 		ft_memdel2((void ***)&list);
 	}
 	get_arg_help(c, ac, av);
+	c->tmpa = c->len;
+	c->tmpb = 0;
 	return (_SUCCESS_);
 }
