@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:12 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/21 16:07:57 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/24 12:43:18 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ int				main(int argc, char **argv)
 {
 	t_checker	c;
 
+	if (argc == 1)
+		return (0);
 	if (!get_arg(&c, argc, argv))
 		ft_putstr_fd("Error\n", 2);
 	else if (!check_dublicate(&c))
