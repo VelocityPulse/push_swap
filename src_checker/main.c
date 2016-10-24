@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:28:12 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/10/24 12:43:18 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/24 12:54:09 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ static int		get_rules(t_checker *c)
 
 	line = NULL;
 	while (get_next_line(0, &line) > 0)
-		c->begin = ft_add_lstline(c->begin, line);
+	{
+		if (select_rule(c, line) == _ERROR_)
+			return (_ERROR_);
+	}
 	return (_SUCCESS_);
 }
 
@@ -69,8 +72,6 @@ int				main(int argc, char **argv)
 	else if (!check_dublicate(&c))
 		ft_putstr_fd("Error\n", 2);
 	else if (!get_rules(&c))
-		ft_putstr_fd("Error\n", 2);
-	else if (!make_rules(&c))
 		ft_putstr_fd("Error\n", 2);
 	else if (!check_sort(&c))
 		ft_printf("KO\n");

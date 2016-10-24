@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 12:29:22 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/22 14:05:15 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/24 12:51:14 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int				make_rules(t_checker *c);
 void			push_up_sort(int *t, int len);
 void			push_back_sort(int *t, int len);
 
+int				select_rule(t_checker *c, char *rule);
 void			rule_sa(t_checker *c);
 void			rule_sb(t_checker *c);
 void			rule_pa(t_checker *c);

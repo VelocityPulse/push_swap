@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/12 13:46:22 by cchameyr          #+#    #+#             */
-/*   Updated: 2016/09/14 10:49:46 by cchameyr         ###   ########.fr       */
+/*   Updated: 2016/10/24 12:54:44 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int		easy_rule(t_checker *c, char *rule)
 	return (_SUCCESS_);
 }
 
-static int		select_rule(t_checker *c, char *rule)
+int		select_rule(t_checker *c, char *rule)
 {
 	if (ft_strncmp(rule, "sa", 2) == 0)
 		rule_sa(c);
@@ -52,25 +52,9 @@ static int		select_rule(t_checker *c, char *rule)
 		rule_rra(c);
 	else if (ft_strncmp(rule, "rrb", 3) == 0)
 		rule_rrb(c);
-	else if (easy_rule(c, rule) == 1)
+	else if (easy_rule(c, rule) == _SUCCESS_)
 		;
 	else
 		return (_ERROR_);
-	return (_SUCCESS_);
-}
-
-int				make_rules(t_checker *c)
-{
-	t_lstline	*list;
-
-	list = c->begin;
-	c->tmpa = c->len;
-	c->tmpb = 0;
-	while (list)
-	{
-		if (!select_rule(c, list->line))
-			return (_ERROR_);
-		list = list->next;
-	}
 	return (_SUCCESS_);
 }
