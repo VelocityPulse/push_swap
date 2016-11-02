@@ -34,7 +34,7 @@ static int		easy_rule(t_checker *c, char *rule)
 	return (_SUCCESS_);
 }
 
-int		select_rule(t_checker *c, char *rule)
+int				select_rule(t_checker *c, char *rule)
 {
 	if (ft_strncmp(rule, "sa", 3) == 0)
 		rule_sa(c);
